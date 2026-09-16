@@ -1,0 +1,30 @@
+# ── ESP-IDF 编译产物 ──
+build/
+managed_components/
+
+# ── Visual Studio 缓存 ──
+.vs/
+*.ipch
+*.db
+*.suo
+*.user
+
+# ── C++ 编译输出 / 临时库 ──
+Aliyun/court/out/
+Aliyun/court/glfw_temp/
+
+# ── Python ──
+__pycache__/
+*.pyc
+*.pyo
+
+# ── 运行时输出（空目录）──
+Aliyun/frames/
+Aliyun/html_3d/
+Aliyun/log/
+Aliyun/uploads/
+
+# ── 其他 ──
+*.log
+Thumbs.db
+.DS_Store

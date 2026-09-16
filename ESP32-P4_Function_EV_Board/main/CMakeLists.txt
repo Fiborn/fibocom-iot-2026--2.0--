@@ -1,0 +1,24 @@
+idf_component_register(
+    SRCS
+        "app_main.c"
+        "cloud_player.c"
+        "http_frames.c"
+        "sc171_udp.c"
+        "time_sync.c"
+        "ui.c"
+        "wifi_manager.c"
+    INCLUDE_DIRS "."
+    EMBED_FILES
+        "challenge.jpg"
+        "scoreboard.rgb565"
+    PRIV_REQUIRES
+        esp_event
+        esp_http_client
+        esp_netif
+        esp_timer
+        esp_wifi
+        json
+        lwip
+        mbedtls
+        nvs_flash
+)

@@ -1,0 +1,5 @@
+{
+    "idf.currentSetup": "D:/Espressif/frameworks/esp-idf-v5.5.4/",
+    "python-envs.defaultEnvManager": "ms-python.python:conda",
+    "python-envs.defaultPackageManager": "ms-python.python:conda"
+}

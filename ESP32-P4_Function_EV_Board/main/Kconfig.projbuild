@@ -1,0 +1,83 @@
+menu "P4 Control configuration"
+
+    config APP_WIFI_SSID
+        string "Wi-Fi SSID"
+        default "YOUR_WIFI_SSID"
+
+    config APP_WIFI_PASSWORD
+        string "Wi-Fi password"
+        default "YOUR_WIFI_PASSWORD"
+
+    config APP_SC171_ENABLE
+        bool "Send a/b/c commands to SC171 over UDP"
+        default y
+
+    config APP_SC171_HOST
+        string "SC171 IPv4 address or host name"
+        default "192.168.12.156"
+        depends on APP_SC171_ENABLE
+
+    config APP_SC171_PORT
+        int "SC171 UDP port"
+        range 1 65535
+        default 9000
+        depends on APP_SC171_ENABLE
+
+    config APP_SC171_SEND_ATTEMPTS
+        int "UDP attempts while waiting for SC171 acknowledgement"
+        range 1 10
+        default 3
+        depends on APP_SC171_ENABLE
+
+    config APP_SC171_ACK_TIMEOUT_MS
+        int "SC171 acknowledgement timeout per attempt (ms)"
+        range 100 5000
+        default 700
+        depends on APP_SC171_ENABLE
+
+    config APP_SC171_BROADCAST_FALLBACK
+        bool "Try UDP broadcast when configured SC171 address gives no acknowledgement"
+        default y
+        depends on APP_SC171_ENABLE
+
+    config APP_SERVER_BASE_URL
+        string "Image server base URL (without trailing slash)"
+        default "http://8.140.192.151:5000"
+        help
+            PC test server URL. For local network development.
+            Plain HTTP is fine for local testing.
+
+    config APP_BEARER_TOKEN
+        string "Image server bearer token (empty = no auth for local test)"
+        default ""
+
+    config APP_HTTP_TIMEOUT_MS
+        int "HTTP request timeout (ms)"
+        range 1000 120000
+        default 10000
+
+    config APP_SNTP_SERVER
+        string "SNTP server used before HTTPS"
+        default "pool.ntp.org"
+
+    config APP_SNTP_TIMEOUT_MS
+        int "SNTP synchronization timeout (ms)"
+        range 1000 120000
+        default 20000
+
+    config APP_MAX_JPEG_BYTES
+        int "Maximum compressed JPEG frame size"
+        range 65536 4194304
+        default 1048576
+
+    config APP_DOWNLOAD_RETRIES
+        int "Retries per cloud request"
+        range 1 20
+        default 3
+
+    config APP_FRAME_DELAY_OVERRIDE_MS
+        int "Cloud frame delay override in ms (0 uses manifest)"
+        range 0 60000
+        default 0
+
+endmenu
