@@ -6,7 +6,7 @@
 
 | 文件 | 作用 |
 |------|------|
-| `pc_test.py` | 主服务器（Flask）：接收上传 → 过滤 → 2D 动画 → 抽帧给 P4 → 3D HTML |
+| `aliyun_pipeline.py` | 主服务器（Flask）：接收上传 → 过滤 → 2D 动画 → 抽帧给 P4 → 3D HTML |
 | `analysis.py` | 过网击球检测（3D 轨迹版）：去噪 + Z 轴折返判罚 + 网侧一致性 |
 | `render_video_v2_Gausmo.py` | 2D 轨迹动画渲染（X/Z 俯视图，高斯平滑），输出 MP4 |
 | `render_3d_smooth.py` | 3D 轨迹高斯平滑渲染，输出交互式 HTML |
@@ -31,4 +31,4 @@
 
 ## 运行说明
 
-启动主服务器：`python pc_test.py [--port 5000]`（依赖 Flask、OpenCV、NumPy）。
+启动主服务器：`python aliyun_pipeline.py [--port 5000]`（依赖 Flask、OpenCV、NumPy）。

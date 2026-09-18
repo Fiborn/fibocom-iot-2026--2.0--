@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-sc171_test_gamadj.py — SC171 GPU 双摄三角化版
+sc171_pipeline_gamadj.py — SC171 GPU 双摄三角化版
 GPU(SNPE/DLC) 双摄推理 → 红色灯时间对齐 → 立体三角化 → 上传阿里云。
 轨迹通过 HTTP 直接上传到阿里云 (8.140.192.151)。
 
 用法:
-  python3 sc171_test_gamadj.py
+  python3 sc171_pipeline_gamadj.py
   # 需要先在同目录创建 badminton.env 配置阿里云上传地址与 API Key
 """
 

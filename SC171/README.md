@@ -6,7 +6,7 @@ SC171（广和通 QCS6490）是系统的边缘计算核心，部署于比赛现�
 
 | 文件 | 作用 |
 |------|------|
-| `sc171_test_gamadj.py` | 主程序：GPU(SNPE/DLC) 双摄推理 → 红色闪烁灯时间对齐 → 立体三角化 → HTTP 上传阿里云 |
+| `sc171_pipeline_gamadj.py` | 主程序：GPU(SNPE/DLC) 双摄推理 → 红色闪烁灯时间对齐 → 立体三角化 → HTTP 上传阿里云 |
 | `api_infer.py` | SNPE GPU 推理封装（SnpeContext，支持 GPU/CPU/DSP） |
 | `utils.py` | 图像预处理（preprocess_letterbox）与检测后处理（detect_postprocess） |
 | `v4l2_grab.c` | C 语言 V4L2 采集程序，底层调用 Linux 设备接口实现高速抓帧 |
@@ -20,5 +20,5 @@ SC171（广和通 QCS6490）是系统的边缘计算核心，部署于比赛现�
 ## 运行说明
 
 1. 在同目录创建 `badminton.env`，配置阿里云上传地址与 API Key。
-2. 运行 `python3 sc171_test_gamadj.py`。
+2. 运行 `python3 sc171_pipeline_gamadj.py`。
 3. 模型与标定文件按 `badminton.env` 指定路径放置，依赖 SC171 的 SNPE 运行库。

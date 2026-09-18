@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-pc_test.py — 阿里云 3D 轨迹处理服务器
+aliyun_pipeline.py — 阿里云 3D 轨迹处理服务器
 
 接收 SC171 上传的三角化 3D 轨迹（stereo_3d），完成：
   1. 过滤轨迹（analysis.process_trajectory，3D 去噪 + Z 轴过网击球检测）
@@ -13,7 +13,7 @@ pc_test.py — 阿里云 3D 轨迹处理服务器
   - y 方向 = 网柱方向（竖直高度）
   - 球网位于 z=0 平面
 
-启动: python pc_test.py [--port 5000]
+启动: python aliyun_pipeline.py [--port 5000]
 """
 
 from __future__ import annotations
